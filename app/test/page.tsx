@@ -47,11 +47,21 @@ export default function TextEmbedding() {
 
             const data = await response.json()
             setEmbedding(data.embedding)
+
+            if (response.status === 200) {
+                alert('Embedding generated successfully');
+                //clear the text area
+                setText('');
+                //clear the file input
+                setFile(null);
+            }
+
         } catch (error) {
             console.error('Error generating embedding:', error)
             alert('Error generating embedding. Please try again.')
         } finally {
-            setIsLoading(false)
+            setIsLoading(false);
+
         }
     }
 

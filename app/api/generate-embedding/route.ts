@@ -12,6 +12,10 @@ export async function POST(req: NextRequest) {
 
         createResource({ content: text });
 
+        return NextResponse.json({
+            message: 'Embedding generated successfully',
+        })
+
     } catch (error) {
         console.error('Error generating embedding:', error);
         return NextResponse.json({ error: 'Error generating embedding' }, { status: 500 });
