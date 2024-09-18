@@ -45,9 +45,6 @@ export default function TextEmbedding() {
                 throw new Error('Failed to generate embedding')
             }
 
-            const data = await response.json()
-            setEmbedding(data.embedding)
-
             if (response.status === 200) {
                 alert('Embedding generated successfully');
                 //clear the text area
