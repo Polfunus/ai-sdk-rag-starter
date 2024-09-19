@@ -35,21 +35,21 @@ export async function POST(req: Request) {
                 }),
                 execute: async ({ question }) => findRelevantContent(question),
             }),
-            showQKKModel: tool({
-                description: `Wenn der Benutzer nach dem QKK Modell fragt: Erkläre die 7 Schritte des QKK-Modells: 
-                    1. Sich auf den Kunden vorbereiten: Je klarer ich bin, desto sicherer wirke ich, desto mehr vertraut mir mein Kunde.
-                    2. Beim Kunden ankommen: 
-                    Ein Vertriebler ist ein guter Zuhörer, nicht Redner - er hört aktiv zu und nimmt sein Gegenüber wahr. Sei authentisch!
-                    3. Die wahren Bedürfnisse des Kunden abklären: Stellt die richtigen Fragen und hört zu.
-                    4. Dem Kunden den Mehrwert unserer Leistung übersetzen: Versetzt sich in die Lage des Kunden.
-                    5. Widerstände bearbeiten: Widerstand ist gut, es zeigt Interesse!
-                    6. Den Kunden zu einer Entscheidung führen: Beendet jedes Gespräch mit einer Vereinbarung.
-                    7. Gemeinsame Reflexion und den Mehrwert sicherstellen: Gegenseitiges Feedback verbindet.
-                `,
-                parameters: z.object({
-                    answer: z.string().describe('Beschreibung des QKK Modells'),
-                }),
-            })
+            // showQKKModel: tool({
+            //     description: `Wenn der Benutzer nach dem QKK Modell fragt: Erkläre die 7 Schritte des QKK-Modells: 
+            //         1. Sich auf den Kunden vorbereiten: Je klarer ich bin, desto sicherer wirke ich, desto mehr vertraut mir mein Kunde.
+            //         2. Beim Kunden ankommen: 
+            //         Ein Vertriebler ist ein guter Zuhörer, nicht Redner - er hört aktiv zu und nimmt sein Gegenüber wahr. Sei authentisch!
+            //         3. Die wahren Bedürfnisse des Kunden abklären: Stellt die richtigen Fragen und hört zu.
+            //         4. Dem Kunden den Mehrwert unserer Leistung übersetzen: Versetzt sich in die Lage des Kunden.
+            //         5. Widerstände bearbeiten: Widerstand ist gut, es zeigt Interesse!
+            //         6. Den Kunden zu einer Entscheidung führen: Beendet jedes Gespräch mit einer Vereinbarung.
+            //         7. Gemeinsame Reflexion und den Mehrwert sicherstellen: Gegenseitiges Feedback verbindet.
+            //     `,
+            //     parameters: z.object({
+            //         answer: z.string().describe('Beschreibung des QKK Modells'),
+            //     }),
+            // })
         },
         onFinish: ({ usage }) => {
             const { promptTokens, completionTokens, totalTokens } = usage;
