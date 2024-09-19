@@ -1,5 +1,3 @@
-import { embed } from 'ai';
-import { openai } from '@ai-sdk/openai';
 import { NextRequest, NextResponse } from "next/server";
 import { createResource } from "@/lib/actions/resources";
 
