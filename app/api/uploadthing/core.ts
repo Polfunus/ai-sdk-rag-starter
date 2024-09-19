@@ -30,7 +30,7 @@ export const ourFileRouter = {
             // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
             return { uploadedBy: "me" };
         }),
-    pdfUploader: f({ "application/pdf": { maxFileSize: "4MB" } }).onUploadComplete(async ({ metadata, file }) => {
+    pdfUploader: f({ "application/pdf": { maxFileSize: "32MB" } }).onUploadComplete(async ({ metadata, file }) => {
         console.log("Upload complete")
 
         console.log("file url", file.url);

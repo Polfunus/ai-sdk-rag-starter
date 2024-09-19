@@ -42,7 +42,8 @@ export const createPDFResource = async (url: string) => {
 
 
   //convert pdfChunks to a array of strings
-  const title = pdfChunks[0].metadata.pdf.info.Title;
+  const title = pdfChunks[0].metadata.pdf.info.Title ? pdfChunks[0].metadata.pdf.info.Title : `No Title - ${url}`;
+
 
   const input = {
     content: title,

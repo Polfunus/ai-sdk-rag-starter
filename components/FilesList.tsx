@@ -6,10 +6,6 @@ import Link from "next/link";
 const FilesList = async () => {
     const files = await utapi.listFiles();
 
-    const pdfChunks = await loadPDF("https://utfs.io/f/SNR6PmuhTyeC7XqstuFlpvMgTt2U43irzx1JnXQuDPS0LVEj");
-
-    console.log(pdfChunks[0].metadata.pdf.info.Title);
-
 
 
     return (
